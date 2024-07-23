@@ -8,8 +8,8 @@ export class TaskController {
     constructor(
         private readonly taskService:TaskService
     ){}
-    @Post()
-    async createTask (@Res() res, @Body(new ValidationPipe()) createTaskDto:CreateTaskDto , @Next() next){
+    @Post('/')
+    async createTask (@Res() res, @Body() createTaskDto:CreateTaskDto , @Next() next){
         try {
             this.taskService.createTask({
                 name: createTaskDto.name,
@@ -27,7 +27,7 @@ export class TaskController {
         }
     }
 
-    @Get()
+    @Get('/')
     async getAllTasks  (@Res() res, @Next() next){
         try {
             const tasks = await this.taskService.getAllTask()
