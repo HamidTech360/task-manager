@@ -19,7 +19,7 @@ export class TaskService {
   }
 
   async getAllTask(): Promise<Task[]> {
-    console.log('In task service GET')
+    console.log('In task service GEsT')
     return await this.TaskModel.find();
   }
 
