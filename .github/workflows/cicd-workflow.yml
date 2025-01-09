@@ -21,8 +21,8 @@ jobs:
     needs: build
     runs-on: [aws-ec2]
     steps:
-     - name: Install Docker
-       run: |
+      - name: Install docker
+        run: |
           sudo apt update
           sudo apt install -y docker.io
           sudo systemctl start docker
