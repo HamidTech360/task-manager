@@ -21,6 +21,12 @@ jobs:
     needs: build
     runs-on: [aws-ec2]
     steps:
+     - name: Install Docker
+       run: |
+          sudo apt update
+          sudo apt install -y docker.io
+          sudo systemctl start docker
+          sudo systemctl enable docker
       - name: Pull Image from docker hub
         run: docker pull  hamidtech/task-manager:latest
       - name: Delete old container
