@@ -10,7 +10,7 @@ import { TaskModule } from './task/task.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot('mongodb+srv://hamid:olalekan2019@ka.uhawrq7.mongodb.net/?retryWrites=true&w=majority'),
+    MongooseModule.forRoot(process.env.MONGO_URI),
     TaskModule
   ],
   controllers: [AppController],

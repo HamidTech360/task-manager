@@ -11,7 +11,7 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
   .setTitle('Task Manager API')
-  .setDescription('Server for managing task statuses')
+  .setDescription('Server for managing task statusesds')
   .setVersion('1.0')
   .build();
   const document = SwaggerModule.createDocument(app, config);
