@@ -13,18 +13,18 @@ jobs:
       - name: Login to Docker Hub
         run: docker login -u hamidtech -p olalekan2019
       - name: Build Docker Image
-        run: docker build -t taskmanagercontainer/task-manager .
+        run: docker build -t hamidtech/task-manager .
       - name: Publish Image to Docker hub
-        run: docker push taskmanagercontainer/task-manager:latest
+        run: docker push hamidtech/task-manager:latest
   
   deploy:
     needs: build
     runs-on: [aws-ec2]
     steps:
       - name: Pull Image from docker hub
-        run: docker pull  taskmanagercontainer/task-manager:latest
+        run: docker pull  hamidtech/task-manager:latest
       - name: Delete old container
         run: docker rm -f task-manager-container
       - name: Run docker container
-        run: docker run -d -p 5000:5000 --name task-manager-container taskmanagercontainer/task-manager
+        run: docker run -d -p 5000:5000 --name task-manager-container hamidtech/task-manager
 
