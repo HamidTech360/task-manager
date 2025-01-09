@@ -19,7 +19,7 @@ jobs:
   
   deploy:
     needs: build
-    runs-on: [aws-proj]
+    runs-on: [aws-ec2-runner]
     steps:
       - name: Install docker
         run: |
