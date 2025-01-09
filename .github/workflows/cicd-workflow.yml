@@ -1,7 +1,8 @@
 name: CICD
 
 on:
-  push: ['main']
+  push:
+    branches: [ master]
 
 jobs: 
   build:
