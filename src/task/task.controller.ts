@@ -19,7 +19,7 @@ export class TaskController {
             })
             return res.status(HttpStatus.OK).json({
                 statusCode: HttpStatus.OK,
-                message:'Task created successfully'
+                message:'Task created successfuly'
             })
         } catch (error) {
             throw new HttpException("Bad Request", HttpStatus.BAD_REQUEST);
