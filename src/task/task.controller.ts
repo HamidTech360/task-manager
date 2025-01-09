@@ -31,9 +31,13 @@ export class TaskController {
     async getAllTasks  (@Res() res, @Next() next){
         try {
             const tasks = await this.taskService.getAllTask()
+            // return res.status(HttpStatus.OK).json({
+            //     statusCode: HttpStatus.OK,
+            //     data:tasks
+            // })
             return res.status(HttpStatus.OK).json({
                 statusCode: HttpStatus.OK,
-                data:tasks
+                data: tasks
             })
         } catch (error) {
             throw new HttpException("Bad Request", HttpStatus.BAD_REQUEST);
