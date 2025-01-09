@@ -20,6 +20,8 @@ jobs:
   deploy:
     needs: build
     runs-on: [aws-ec2]
+    env:
+      MONGO_URI:  ${{ secrets.MONGO_URI }}
     steps:
       - name: Install docker
         run: |
